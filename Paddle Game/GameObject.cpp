@@ -1,15 +1,15 @@
 #include "GameObject.h"
-//GameObject::GameObject() {
-//
-//}
+GameObject::GameObject() {
+
+}
 //GameObject::GameObject(char *filename) {
 //
 //	GTexture::GTexture(filename, 1, 1, 1);
 //}
-GameObject::GameObject(char* _fileName, int cols, int rows, int count)
-{
-	GTexture::GTexture(_fileName, 1, 1, 1);
-}
+//void GameObject::Init(char* _fileName, int cols, int rows, int count)
+//{
+//	GTexture::Init(_fileName, 1, 1, 1);
+//}
 void GameObject::SetPosition(int newX, int newY) {
 	x = newX;
 	y = newY;

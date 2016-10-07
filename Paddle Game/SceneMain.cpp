@@ -9,9 +9,9 @@ SceneMain::SceneMain(int _nCmdShow): CGame(_nCmdShow)
 void SceneMain::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int t)
 {
 
-	GameObject *gameObj = new GameObject("ball.png", 1, 1, 1);
+	ball.Init("ball.bmp", 1, 1, 1);
 	G_SpriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
-	gameObj->Draw(12, 12);
+	ball.Draw(12, 40);
 	G_SpriteHandler->End();
 }
 

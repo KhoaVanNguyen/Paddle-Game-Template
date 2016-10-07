@@ -3,7 +3,7 @@
 GTexture::GTexture() {
 
 }
-GTexture::GTexture(char* _fileName, int cols, int rows, int count)
+void GTexture::Init(char* _fileName, int cols, int rows, int count)
 {
 	Cols = cols;
 	Rows = rows;

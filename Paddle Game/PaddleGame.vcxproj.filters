@@ -112,7 +112,7 @@
     <Image Include="background.jpg">
       <Filter>Resources</Filter>
     </Image>
-    <Image Include="ball.png">
+    <Image Include="ball.bmp">
       <Filter>Resources</Filter>
     </Image>
   </ItemGroup>

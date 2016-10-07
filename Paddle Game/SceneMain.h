@@ -5,13 +5,16 @@
 #include "Utils.h"
 #include "GTexture.h"
 #include "Global.h"
-#include "GameObject.h"
+//#include "GameObject.h"
+#include "Ball.h"
 class SceneMain: public CGame
 {
 public: 	
 	SceneMain(int _nCmdShow);
 	~SceneMain();	
 
+	Ball ball;
+	
 protected:	
 
 	virtual void RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int t);

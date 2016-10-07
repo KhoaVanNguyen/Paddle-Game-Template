@@ -6,7 +6,7 @@ public:
 	virtual void Move();
 	void ResetPosition();
 	int IsScore();
-
+	Ball();
 	~Ball();
 };
 

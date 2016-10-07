@@ -5,7 +5,7 @@ class Paddle : public GameObject
 protected:
 	virtual void Move();
 public:
-//	Paddle();
+	Paddle();
 	~Paddle();
 	friend class Ball;
 };
