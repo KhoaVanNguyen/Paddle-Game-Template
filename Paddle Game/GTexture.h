@@ -17,6 +17,7 @@ public:
 	int FrameWidth;		//width of 1 frame
 	int FrameHeight;	//height of 1 frame
 
+	GTexture();
 	GTexture( const GTexture &ctexture);
 	GTexture(char* _fileName, int cols = 1, int rows = 1, int count = 1);
 	~GTexture();

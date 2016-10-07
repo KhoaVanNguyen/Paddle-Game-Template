@@ -31,6 +31,15 @@
     <ClCompile Include="dsutil.cpp">
       <Filter>Framework\Sound</Filter>
     </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Paddle.cpp">
+      <Filter>Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Ball.cpp">
+      <Filter>Game Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -63,6 +72,15 @@
     <ClInclude Include="dsutil.h">
       <Filter>Framework\Sound</Filter>
     </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Paddle.h">
+      <Filter>Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Ball.h">
+      <Filter>Game Objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Winmain">
@@ -86,9 +104,15 @@
     <Filter Include="Resources">
       <UniqueIdentifier>{ca7f03b5-e800-4f4d-baed-9da998d3fc31}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game Objects">
+      <UniqueIdentifier>{3b809f8b-1a7f-41a5-af2c-107adcca7abf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="background.jpg">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="ball.png">
       <Filter>Resources</Filter>
     </Image>
   </ItemGroup>

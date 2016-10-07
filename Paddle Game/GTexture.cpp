@@ -1,5 +1,8 @@
 #include "GTexture.h"
 
+GTexture::GTexture() {
+
+}
 GTexture::GTexture(char* _fileName, int cols, int rows, int count)
 {
 	Cols = cols;

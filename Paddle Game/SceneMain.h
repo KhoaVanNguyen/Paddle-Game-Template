@@ -3,6 +3,9 @@
 
 #include "Game.h"
 #include "Utils.h"
+#include "GTexture.h"
+#include "Global.h"
+#include "GameObject.h"
 class SceneMain: public CGame
 {
 public: 	
