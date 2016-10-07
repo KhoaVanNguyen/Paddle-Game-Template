@@ -22,7 +22,7 @@ public:
 	void Init(char* _fileName, int cols = 1, int rows = 1, int count = 1);
 	~GTexture();
 	//vẽ texture tại vị trí (x, y) trên màn hình
-	void Draw(int x, int y);
+	void DrawAt(int x, int y);
 
 protected:
 	void Load();

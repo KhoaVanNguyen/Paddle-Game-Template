@@ -5,7 +5,7 @@
 #include "Utils.h"
 #include "GTexture.h"
 #include "Global.h"
-//#include "GameObject.h"
+#include "Paddle.h"
 #include "Ball.h"
 class SceneMain: public CGame
 {
@@ -14,7 +14,7 @@ public:
 	~SceneMain();	
 
 	Ball ball;
-	
+	Paddle leftPaddle, rightPaddle;
 protected:	
 
 	virtual void RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int t);

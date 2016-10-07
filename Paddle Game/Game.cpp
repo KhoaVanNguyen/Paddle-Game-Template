@@ -191,8 +191,8 @@ void GameDraw(int deltaTime)
 {
 	if (G_Device->BeginScene()) 
 	{
-		// Clear back buffer with BLACK
-		G_Device->ColorFill(G_BackBuffer,NULL,D3DCOLOR_XRGB(0,0,0));
+		//// Clear back buffer with BLACK
+	//	G_Device->ColorFill(G_BackBuffer,NULL,D3DCOLOR_XRGB(0,0,0));
 		G_SpriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
 		//----- start drawing
 
@@ -212,29 +212,30 @@ void CGame::GameRun()
 	int done = 0;
 	DWORD frame_start = GetTickCount();;
 	
-	DWORD tick_per_frame = 100 / G_FrameRate;
+	DWORD tick_per_frame = 1000 / G_FrameRate;
 
-	while (!done) 
+	while (!done)
 	{
-		if (PeekMessage(&msg,NULL,0,0,PM_REMOVE))
+		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
 		{
-			if (msg.message==WM_QUIT) done=1;
+			if (msg.message == WM_QUIT) done = 1;
 
 			TranslateMessage(&msg);
-			DispatchMessage(&msg);			
+			DispatchMessage(&msg);
 		}
 
 		DWORD now = GetTickCount();
-		_DeltaTime = now - frame_start; 
+		_DeltaTime = now - frame_start;
 		if (_DeltaTime >= tick_per_frame)
 		{
 			frame_start = now;
-			RenderFrame();
+			ProcessKeyBoard();
+			ProcessInput(G_Device, _DeltaTime);
+			//RenderFrame();
 		}
-
-		ProcessKeyBoard();
-
-		ProcessInput(G_Device, _DeltaTime);
+		RenderFrame();
+		/*ProcessKeyBoard();
+		ProcessInput(G_Device, _DeltaTime);*/
 	}
 }
 
@@ -250,18 +251,18 @@ void CGame::RenderFrame()
 
 void CGame::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int Delta) 
 {
-	d3ddv->ColorFill(G_BackBuffer,NULL,D3DCOLOR_XRGB(0,0,0));
+	//d3ddv->ColorFill(G_BackBuffer,NULL,D3DCOLOR_XRGB(0,0,0));
 }
 void CGame::LoadResources(LPDIRECT3DDEVICE9 d3ddv) { }
 
 void CGame::ProcessInput(LPDIRECT3DDEVICE9 d3ddv, int Delta) 
 {
-	/*HRESULT hr = G_KeyBoard->GetDeviceState(sizeof(_KeyStates), (LPVOID)&_KeyStates);
+	HRESULT hr = G_KeyBoard->GetDeviceState(sizeof(_KeyStates), (LPVOID)&_KeyStates);
 		if(hr != S_OK)
 		{
 			hr = G_KeyBoard->Acquire();
 			G_KeyBoard->GetDeviceState(sizeof(_KeyStates), (LPVOID)&_KeyStates);
-		}*/
+		}
 }
 
 int CGame::IsKeyDown(int KeyCode)

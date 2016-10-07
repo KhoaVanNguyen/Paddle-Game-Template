@@ -119,6 +119,7 @@
   <ItemGroup>
     <Image Include="background.jpg" />
     <Image Include="ball.bmp" />
+    <Image Include="paddle.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

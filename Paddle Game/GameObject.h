@@ -23,6 +23,7 @@ public:
 	int Width();
 	int Height();
 	RECT GetRect();
+	void Draw();
 	GameObject();
 	//void Init(char* _fileName, int cols = 1, int rows = 1, int count = 1);
 	//GameObject(char*);

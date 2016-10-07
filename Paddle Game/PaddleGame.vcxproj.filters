@@ -115,5 +115,8 @@
     <Image Include="ball.bmp">
       <Filter>Resources</Filter>
     </Image>
+    <Image Include="paddle.bmp">
+      <Filter>Resources</Filter>
+    </Image>
   </ItemGroup>
 </Project>

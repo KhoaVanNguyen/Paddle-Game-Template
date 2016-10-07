@@ -30,7 +30,7 @@ GTexture::~GTexture()
 		this->Texture->Release();
 }
 
-void GTexture::Draw(int x, int y) 
+void GTexture::DrawAt(int x, int y) 
 {
 	D3DXVECTOR3 position((float)x, (float)y, 0);
 	G_SpriteHandler->Draw( Texture, &Size, NULL, &position, 0xFFFFFFFF );

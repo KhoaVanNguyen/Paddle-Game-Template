@@ -23,6 +23,18 @@ void GameObject::SetSize(int newWidth, int newHeight) {
 	height = newHeight;
 }
 
+
+void GameObject::Draw() {
+		D3DXVECTOR3 position(0, 0, 0);
+		position.x = this->x;
+		position.y = this->y;
+		G_SpriteHandler->Draw(this->Texture,
+			NULL,
+			NULL,
+			&position,
+			D3DCOLOR_XRGB(255, 255, 255));
+}
+
 GameObject::~GameObject()
 {
 }
