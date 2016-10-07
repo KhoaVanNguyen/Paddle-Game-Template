@@ -6,6 +6,14 @@ Ball::Ball() {
 Ball::~Ball() {
 
 }
+void Ball::InitPosition() {
+	width = FrameWidth;
+	height = FrameHeight;
+	x = G_ScreenWidth / 2;
+	y = G_ScreenHeight / 2;
+	movex = 8;
+	movey = 8;
+}
 void Ball::Move() {
 	//move the ball sprite
 	x += movex;

@@ -12,32 +12,17 @@ SceneMain::SceneMain(int _nCmdShow): CGame(_nCmdShow)
 
 void SceneMain::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int t)
 {
-
-	/*DrawBackground(d3ddv);
-
+	DrawBackground(d3ddv);
 	G_SpriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
 	ball.Draw();
 	leftPaddle.Draw();
 	rightPaddle.Draw();
-	G_SpriteHandler->End();*/
-	if (d3ddv->BeginScene())
-	{
-		//// Clear back buffer with image
-		DrawBackground(d3ddv);
-		G_SpriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
-		//----- start drawing
-		ball.Draw();
-		leftPaddle.Draw();
-		rightPaddle.Draw();
-		//---- end drawing
-		G_SpriteHandler->End();
-		d3ddv->EndScene();
-	}
-	d3ddv->Present(NULL, NULL, NULL, NULL);
+	G_SpriteHandler->End();
 }
 
 void SceneMain::ProcessInput(LPDIRECT3DDEVICE9 d3ddv, int Delta)
 {
+	ball.Move();
 	if (IsKeyDown(DIK_UPARROW)) {
 
 		leftPaddle.y -= 10;
@@ -50,8 +35,9 @@ void SceneMain::ProcessInput(LPDIRECT3DDEVICE9 d3ddv, int Delta)
 
 void SceneMain::LoadResources(LPDIRECT3DDEVICE9 d3ddv)
 {
-	DrawBackground(d3ddv);
+	//DrawBackground(d3ddv);
 	ball.Init("ball.bmp", 1, 1, 1);
+	ball.InitPosition();
 	leftPaddle.Init("paddle.bmp", 1, 1, 1);
 	rightPaddle.Init("paddle.bmp", 1, 1, 1);
 	ball.x = 20;
