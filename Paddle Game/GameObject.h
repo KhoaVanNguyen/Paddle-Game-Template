@@ -5,7 +5,7 @@ class GameObject : public GTexture
 protected:
 
 	virtual void Move();
-
+	virtual void InitPosition();
 public:
 	int x, y;
 	int width, height;

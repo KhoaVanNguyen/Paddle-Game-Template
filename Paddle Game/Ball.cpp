@@ -11,8 +11,8 @@ void Ball::InitPosition() {
 	height = FrameHeight;
 	x = G_ScreenWidth / 2;
 	y = G_ScreenHeight / 2;
-	movex = 8;
-	movey = 8;
+	movex = BALL_SPEED;
+	movey = BALL_SPEED;
 }
 void Ball::Move() {
 	//move the ball sprite

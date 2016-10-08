@@ -4,7 +4,7 @@ class Ball : public GameObject
 {	
 public:
 	virtual void Move();
-	void InitPosition();
+	virtual void InitPosition();
 	void ResetPosition();
 	int IsScore();
 	Ball();

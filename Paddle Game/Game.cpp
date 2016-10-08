@@ -212,7 +212,7 @@ void CGame::GameRun()
 	int done = 0;
 	DWORD frame_start = GetTickCount();;
 	
-	DWORD tick_per_frame = 1000 / G_FrameRate;
+	DWORD tick_per_frame = 100 / G_FrameRate;
 
 	while (!done)
 	{

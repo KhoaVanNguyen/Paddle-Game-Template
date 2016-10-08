@@ -41,6 +41,9 @@ GameObject::~GameObject()
 void GameObject::Move() {
 
 }
+void GameObject::InitPosition() {
+
+}
 
 int GameObject::X() {
 	return x;

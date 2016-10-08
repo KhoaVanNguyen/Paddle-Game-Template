@@ -29,6 +29,9 @@
 //size of key buffer(used in game class to save key state
 #define GL_KEY_BUFFER_SIZE	1024
 
+
+#define PADDLE_SPEED 10
+#define BALL_SPEED 6
 //
 //GLOBAL VARIANT
 //

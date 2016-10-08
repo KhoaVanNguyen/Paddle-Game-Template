@@ -2,9 +2,18 @@
 #include "GameObject.h"
 class Paddle : public GameObject
 {
-protected:
-	virtual void Move();
+
+	
 public:
+	bool isLeft;
+	
+	void ConstrainPosition();
+	void MoveDown();
+	void MoveUp();
+
+
+	virtual void Move();
+	virtual void InitPosition();
 	Paddle();
 	~Paddle();
 	friend class Ball;
