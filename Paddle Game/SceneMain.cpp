@@ -13,10 +13,12 @@ SceneMain::SceneMain(int _nCmdShow): CGame(_nCmdShow)
 void SceneMain::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int t)
 {
 	//DrawBackground(d3ddv);
+	d3ddv->ColorFill(G_BackBuffer, NULL, D3DCOLOR_XRGB(0, 0, 12));
 	G_SpriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
 	ball.Draw();
 	leftPaddle.Draw();
 	rightPaddle.Draw();
+	//rightPaddle.y += Mouse_Y();
 	G_SpriteHandler->End();
 }
 
@@ -33,15 +35,14 @@ void SceneMain::ProcessInput(LPDIRECT3DDEVICE9 d3ddv, int Delta)
 	}
 	if (IsKeyDown(DIK_UPARROW)) {
 		leftPaddle.MoveUp();
-
-		rightPaddle.MoveUp();
 	}
 	if (IsKeyDown(DIK_DOWNARROW)) {
 
 		leftPaddle.MoveDown();
-
-		rightPaddle.MoveDown();
 	}
+
+	rightPaddle.y += Mouse_Y();
+
 	//  constraint the paddle to the screen's edges
 	leftPaddle.ConstrainPosition();
 	rightPaddle.ConstrainPosition();
@@ -55,6 +56,7 @@ void SceneMain::ProcessInput(LPDIRECT3DDEVICE9 d3ddv, int Delta)
 	{
 		ball.SetVelocity(ball.VelX(), ball.VelY()*(-1));
 	}
+	
 }
 
 void SceneMain::LoadResources(LPDIRECT3DDEVICE9 d3ddv)

@@ -50,6 +50,7 @@ LPDIRECT3DSURFACE9			G_BackBuffer;
 
 LPDIRECTINPUT8				G_DirectInput;		// The DirectInput object         
 LPDIRECTINPUTDEVICE8		G_KeyBoard;			// The keyboard device 
+LPDIRECTINPUTDEVICE8		G_Mouse;			// The mouse device
 LPD3DXSPRITE				G_SpriteHandler;	// spriteHandler to draw texture
 
 

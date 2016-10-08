@@ -114,7 +114,7 @@ void CGame::InitKeyboard()
 		return;
 	
 	hr = G_DirectInput->CreateDevice(GUID_SysKeyboard, &G_KeyBoard, NULL); 
-	
+	hr = G_DirectInput->CreateDevice(GUID_SysMouse, &G_Mouse, NULL);
 	// TO-DO: put in exception handling
 	if (FAILED(hr)==true) 
 		return;
@@ -143,12 +143,40 @@ void CGame::InitKeyboard()
 	if (FAILED(hr)==true) 
 		return;
 }
+void CGame::InitMouse() {
+	//set the data format for mouse input
+	HRESULT result = G_Mouse->SetDataFormat(&c_dfDIMouse);
+	if (result != DI_OK)
+		return;
 
+	//set the cooperative level
+	//this will also hide the mouse pointer
+	result = G_Mouse->SetCooperativeLevel(G_hWnd, DISCL_EXCLUSIVE | DISCL_FOREGROUND);
+	if (result != DI_OK)
+		return;
+
+	//acquire the mouse
+	result = G_Mouse->Acquire();
+	if (result != DI_OK)
+		return;
+
+	//give the go-ahead
+}
+int CGame::Mouse_X()
+{
+	return mouse_state.lX;
+}
+
+int CGame::Mouse_Y()
+{
+	return mouse_state.lY;
+}
 void CGame::InitGame()
 {
 	InitWindow(nCmdShow);
 	InitDirectX();
 	InitKeyboard();
+	InitMouse();
 	LoadResources(G_Device);
 }
 
@@ -183,7 +211,9 @@ void CGame::ProcessKeyBoard()
 				OnKeyUp(KeyCode);
 		}
 }
-
+void CGame::ProcessMouse() {
+	G_Mouse->GetDeviceState(sizeof(mouse_state), (LPVOID)&mouse_state);
+}
 void CGame::OnKeyUp(int KeyCode) { }
 void CGame::OnKeyDown(int KeyCode) { }
 
@@ -230,6 +260,7 @@ void CGame::GameRun()
 		{
 			frame_start = now;
 			ProcessKeyBoard();
+			ProcessMouse();
 			ProcessInput(G_Device, _DeltaTime);
 			//RenderFrame();
 		}
@@ -263,6 +294,13 @@ void CGame::ProcessInput(LPDIRECT3DDEVICE9 d3ddv, int Delta)
 			hr = G_KeyBoard->Acquire();
 			G_KeyBoard->GetDeviceState(sizeof(_KeyStates), (LPVOID)&_KeyStates);
 		}
+
+	hr = G_Mouse->GetDeviceState(sizeof(mouse_state), (LPVOID)&mouse_state);
+	if (hr != S_OK)
+	{
+		hr = G_Mouse->Acquire();
+		G_Mouse->GetDeviceState(sizeof(mouse_state), (LPVOID)&mouse_state);
+	}
 }
 
 int CGame::IsKeyDown(int KeyCode)

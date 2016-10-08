@@ -26,9 +26,11 @@ protected:
 	int InitDirectX();
 
 	void InitKeyboard();
-
+	void InitMouse();
+	int Mouse_X();
+	int Mouse_Y();
 	void ProcessKeyBoard();
-
+	void ProcessMouse();
 	virtual void RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int Delta);
 	virtual void LoadResources(LPDIRECT3DDEVICE9 d3ddv);
 	virtual void ProcessInput(LPDIRECT3DDEVICE9 d3ddv, int Delta);
@@ -45,6 +47,8 @@ protected:
 	DWORD _DeltaTime;
 
 	BYTE  _KeyStates[256]; // DirectInput keyboard state buffer 
+
+	DIMOUSESTATE mouse_state;
 
 	DIDEVICEOBJECTDATA _KeyEvents[ GL_KEY_BUFFER_SIZE ]; // Buffered keyboard data
 };
