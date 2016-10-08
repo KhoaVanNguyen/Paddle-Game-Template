@@ -16,12 +16,13 @@ public:
 
 	Ball ball;
 	Paddle leftPaddle, rightPaddle;
-	int score1, score2;
+	int score1, score2, totalTime;
 	GUI gui;
 	RECT rScore1;
 	RECT rScore2;
-
+	RECT rTimer;
 	void InitLabels();
+	void CountTime();
 protected:	
 
 	virtual void RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int t);
