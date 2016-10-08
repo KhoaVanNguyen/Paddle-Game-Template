@@ -7,6 +7,7 @@
 #include "Global.h"
 #include "Paddle.h"
 #include "Ball.h"
+#include "GUI.h"
 class SceneMain: public CGame
 {
 public: 	
@@ -16,6 +17,11 @@ public:
 	Ball ball;
 	Paddle leftPaddle, rightPaddle;
 	int score1, score2;
+	GUI gui;
+	RECT rScore1;
+	RECT rScore2;
+
+	void InitLabels();
 protected:	
 
 	virtual void RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int t);

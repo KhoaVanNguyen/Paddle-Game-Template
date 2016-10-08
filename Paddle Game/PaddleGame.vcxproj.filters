@@ -40,6 +40,7 @@
     <ClCompile Include="Ball.cpp">
       <Filter>Game Objects</Filter>
     </ClCompile>
+    <ClCompile Include="GUI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -81,6 +82,7 @@
     <ClInclude Include="Ball.h">
       <Filter>Game Objects</Filter>
     </ClInclude>
+    <ClInclude Include="GUI.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Winmain">

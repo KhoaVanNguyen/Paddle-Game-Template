@@ -73,6 +73,8 @@ extern LPDIRECTINPUTDEVICE8			G_KeyBoard;			// The keyboard device
 extern LPDIRECTINPUTDEVICE8			G_Mouse;
 extern LPD3DXSPRITE					G_SpriteHandler;	// spriteHandler to draw texture
 
+
+//extern ID3DXFont					*font;  //font
 //GLOBAL METHOD
 
 //write string to a tracing file

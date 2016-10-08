@@ -40,12 +40,12 @@ int Ball::IsScore()
 {
 
 	//vertical boundary
-	if (x < 0)
+	if (x <= 0)
 	{
 		ResetPosition();
 		return 2;
 	}
-	else if (x >(G_ScreenWidth - width))
+	else if (x >= (G_ScreenWidth - width))
 	{
 		ResetPosition();
 		return 1;

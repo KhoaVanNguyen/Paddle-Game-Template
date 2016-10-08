@@ -92,6 +92,7 @@
     <ClCompile Include="GAudio.cpp" />
     <ClCompile Include="GCamera.cpp" />
     <ClCompile Include="dsutil.cpp" />
+    <ClCompile Include="GUI.cpp" />
     <ClCompile Include="Paddle.cpp" />
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -108,6 +109,7 @@
     <ClInclude Include="GCamera.h" />
     <ClInclude Include="dsutil.h" />
     <ClInclude Include="dxutil.h" />
+    <ClInclude Include="GUI.h" />
     <ClInclude Include="Paddle.h" />
     <ClInclude Include="SceneMain.h" />
     <ClInclude Include="Game.h" />

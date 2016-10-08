@@ -7,5 +7,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	game->InitGame();
 	game->GameRun();
 	game->GameEnd();
+
 	return 0;
 }
